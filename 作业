@@ -1,0 +1,18 @@
+// 魔法游戏2.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
+
+#include <iostream>
+
+int main()
+{
+    FILE* fs;
+    fopen_s(&fs, "FILE.txt", "r");
+    long length = 0;
+    fseek(fs, 0, SEEK_END);
+    length = ftell(fs);
+    rewind(fs);
+    fclose(fs);
+    printf("玩家1的生命值是:%d\n", length);
+    printf("玩家2的魔法值是:%d\n", length);
+    return 0;
+}
